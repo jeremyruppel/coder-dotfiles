@@ -8,10 +8,11 @@ sudo apt-get install build-essential procps curl file git
 # install linuxbrew
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-
+# install brew packages
+brew bundle
 
 # install dotfiles
-# make
+make
 
 # install vim plugins
-# vi +PlugInstall +qall --headless
+vi +PlugInstall +qall --headless

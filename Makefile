@@ -1,16 +1,14 @@
-NVIM_VERSION="v0.11.6"
-
 .PHONY: install
 
 install: \
 	~/.gitconfig \
 	~/.bash_aliases \
-	~/.local/bin/nvim \
 	~/.config/nvim/init.vim \
 	~/.local/share/nvim/site/autoload/plug.vim
 
 clean:
-	rm -rf ~/.local/bin/nvim
+	rm -rf ~/.gitconfig
+	rm -rf ~/.bash_aliases
 	rm -rf ~/.config/nvim/init.vim
 	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
 
@@ -19,14 +17,7 @@ clean:
 
 ~/.bash_aliases: .bash_aliases
 	cp -R $< $@
-
-~/.local/bin/nvim:
-	mkdir -p $(@D)
-	curl -fsSL "https://github.com/neovim/neovim/releases/download/${NVIM_VERSION}/nvim-linux-x86_64.tar.gz" -o /tmp/nvim.tar.gz
-	tar xzf /tmp/nvim.tar.gz -C $(@D)
-	mv $(@D)/nvim-linux-x86_64/bin/nvim $@
-	rm -rf $(@D)/nvim-linux-x86_64
-	rm /tmp/nvim.tar.gz
+	source $@
 
 ~/.config/nvim/init.vim: .config/nvim/init.vim
 	mkdir -p $(@D)
