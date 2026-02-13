@@ -3,6 +3,7 @@ NVIM_VERSION="v0.10.4"
 .PHONY: install
 
 install: \
+	~/.gitconfig \
 	~/.bash_aliases \
 	~/.local/bin/nvim \
 	~/.config/nvim/init.vim \
@@ -12,6 +13,9 @@ clean:
 	rm -rf ~/.local/bin/nvim
 	rm -rf ~/.config/nvim/init.vim
 	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
+
+~/.gitconfig: .gitconfig
+	cp -R $< $@
 
 ~/.bash_aliases: .bash_aliases
 	cp -R $< $@
