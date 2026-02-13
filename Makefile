@@ -3,6 +3,7 @@ NVIM_VERSION="v0.10.4"
 .PHONY: install
 
 install: \
+	~/.bash_aliases \
 	~/.local/bin/nvim \
 	~/.config/nvim/init.vim \
 	~/.local/share/nvim/site/autoload/plug.vim
@@ -11,6 +12,9 @@ clean:
 	rm -rf ~/.local/bin/nvim
 	rm -rf ~/.config/nvim/init.vim
 	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
+
+~/.bash_aliases: .bash_aliases
+	cp -R $< $@
 
 ~/.local/bin/nvim:
 	mkdir -p $(@D)
