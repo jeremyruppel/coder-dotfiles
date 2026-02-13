@@ -2,22 +2,16 @@
 
 install: \
 	~/.gitconfig \
-	~/.bash_aliases \
 	~/.config/nvim/init.vim \
 	~/.local/share/nvim/site/autoload/plug.vim
 
 clean:
 	rm -rf ~/.gitconfig
-	rm -rf ~/.bash_aliases
 	rm -rf ~/.config/nvim/init.vim
 	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
 
 ~/.gitconfig: .gitconfig
 	cp -R $< $@
-
-~/.bash_aliases: .bash_aliases
-	cp -R $< $@
-	source $@
 
 ~/.config/nvim/init.vim: .config/nvim/init.vim
 	mkdir -p $(@D)
