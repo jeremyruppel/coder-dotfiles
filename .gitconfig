@@ -1,3 +1,7 @@
+[user]
+	name = Jeremy Ruppel
+	email = jeremy@coder.com
+
 [core]
 	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -7,6 +11,10 @@
 	co = checkout
 	br = branch
 	ci = commit
+	ls = ls-files
+	dif = diff -w -- ':!package-lock.json'
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	unstage = reset HEAD
 
 [rerere]
 	enabled = 1

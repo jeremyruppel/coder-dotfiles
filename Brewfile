@@ -1,0 +1,9 @@
+# homebrew
+# https://github.com/Homebrew/homebrew-bundle
+brew "git"
+brew "tree"
+brew "vivid"
+brew "tmux"
+brew "fzf"
+brew "bat"
+brew "git-delta"
