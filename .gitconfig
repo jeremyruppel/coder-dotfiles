@@ -3,7 +3,6 @@
 	email = jeremy@coder.com
 
 [core]
-	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 
 [alias]

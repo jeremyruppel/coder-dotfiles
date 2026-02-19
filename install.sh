@@ -19,3 +19,6 @@ brew bundle
 # install vim plugins
 nvim --headless +PlugInstall +qall
 nvim --headless "+CocInstall coc-json coc-tsserver coc-biome" +qall
+
+# claude code
+curl -fsSL https://claude.ai/install.sh | bash

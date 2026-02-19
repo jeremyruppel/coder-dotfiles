@@ -1,14 +1,19 @@
 .PHONY: install
 
 install: \
+	~/.tmux.conf \
 	~/.gitconfig \
 	~/.config/nvim/init.vim \
 	~/.local/share/nvim/site/autoload/plug.vim
 
 clean:
+	rm -rf ~/.tmux.conf
 	rm -rf ~/.gitconfig
 	rm -rf ~/.config/nvim/init.vim
 	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
+
+~/.tmux.conf: .tmux.conf
+	cp -R $< $@
 
 ~/.gitconfig: .gitconfig
 	cp -R $< $@
