@@ -35,6 +35,9 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
+" coc.nvim
+runtime! coc.vim
+
 colorscheme noctu
 
 filetype plugin indent on

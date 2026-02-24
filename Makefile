@@ -4,12 +4,14 @@ install: \
 	~/.tmux.conf \
 	~/.gitconfig \
 	~/.config/nvim/init.vim \
+	~/.config/nvim/coc.vim \
 	~/.local/share/nvim/site/autoload/plug.vim
 
 clean:
 	rm -rf ~/.tmux.conf
 	rm -rf ~/.gitconfig
 	rm -rf ~/.config/nvim/init.vim
+	rm -rf ~/.config/nvim/coc.vim
 	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
 
 ~/.tmux.conf: .tmux.conf
@@ -19,6 +21,10 @@ clean:
 	cp -R $< $@
 
 ~/.config/nvim/init.vim: .config/nvim/init.vim
+	mkdir -p $(@D)
+	cp -R $< $@
+
+~/.config/nvim/coc.vim: .config/nvim/coc.vim
 	mkdir -p $(@D)
 	cp -R $< $@
 
