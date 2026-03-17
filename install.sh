@@ -21,4 +21,5 @@ nvim --headless +PlugInstall +qall
 nvim --headless "+CocInstall coc-json coc-tsserver coc-biome" +qall
 
 # claude code
-curl -fsSL https://claude.ai/install.sh | bash
+# curl -fsSL https://claude.ai/install.sh | bash
+export PATH="$HOME/.local/bin:$PATH"

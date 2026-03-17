@@ -38,7 +38,7 @@ call plug#end()
 " coc.nvim
 runtime! coc.vim
 
-colorscheme noctu
+colorscheme dim
 
 filetype plugin indent on
 

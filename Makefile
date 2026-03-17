@@ -1,36 +1,24 @@
-.PHONY: install
+.PHONY: install clean
 
-install: \
-	~/.tmux.conf \
-	~/.gitconfig \
-	~/.config/nvim/init.vim \
-	~/.config/nvim/coc.vim \
-	~/.local/share/nvim/site/autoload/plug.vim
+DOTS = \
+	.bash_aliases \
+	.gitconfig \
+	.rgignore \
+	.tmux.conf \
+	.config/nvim/init.vim \
+	.config/nvim/coc.vim \
+	.local/share/nvim/site/autoload/plug.vim
+
+INSTALLED = $(addprefix $(HOME)/,$(DOTS))
+
+install: $(INSTALLED)
 
 clean:
-	rm -rf ~/.tmux.conf
-	rm -rf ~/.gitconfig
-	rm -rf ~/.config/nvim/init.vim
-	rm -rf ~/.config/nvim/coc.vim
-	rm -rf ~/.local/share/nvim/site/autoload/plug.vim
+	rm -f $(INSTALLED)
 
-~/.tmux.conf: .tmux.conf
-	cp -R $< $@
-
-~/.gitconfig: .gitconfig
-	cp -R $< $@
-
-~/.config/nvim/init.vim: .config/nvim/init.vim
+$(INSTALLED): $(HOME)/% : %
 	mkdir -p $(@D)
-	cp -R $< $@
-
-~/.config/nvim/coc.vim: .config/nvim/coc.vim
-	mkdir -p $(@D)
-	cp -R $< $@
-
-~/.local/share/nvim/site/autoload/plug.vim: .local/share/nvim/site/autoload/plug.vim
-	mkdir -p $(@D)
-	cp -R $< $@
+	cp $< $@
 
 .local/share/nvim/site/autoload/plug.vim:
 	curl -fLo $@ --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
