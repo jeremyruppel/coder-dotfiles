@@ -21,4 +21,4 @@ nvim --headless +PlugInstall +qall
 nvim --headless "+CocInstall coc-json coc-tsserver coc-biome" +qall
 
 # typescript
-pnpm install -g typescript typescript-language-server@5.1.3
+npm install -g typescript typescript-language-server@5.1.3
